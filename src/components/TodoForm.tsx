@@ -1,15 +1,20 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useContext, useState } from "react";
+import TodoContext from "../context/TodoContext";
 
 function TodoForm() {
   const [data, setData] = useState("");
 
-  //   const changeHandler = (e: ) => {
-  //     e.target.name = e.target.value;
-  //   };
+  const { addTodo } = useContext(TodoContext);
 
   const submitHandler = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    console.log(data);
+    const newTodo = {
+      id: Math.random(), // temp. solution for generating id
+      text: data,
+      isCompleted: false,
+    };
+
+    addTodo(newTodo);
   };
 
   return (
