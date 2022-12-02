@@ -4,6 +4,8 @@ https://medium.com/@sandupa.egodage/react-form-with-typescript-c74510b2f9d3
 
 ---
 
+## React Context
+
 ## HTML Forms
 
 - The <form> element itself is a shell or container that doesn't have any visual impact.

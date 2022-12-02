@@ -5,21 +5,11 @@ interface TodoItem {
   text: string;
   isCompleted: boolean;
 }
+interface TodoListProps {
+  data: TodoItem[];
+}
 
-function TodoList() {
-  const data: TodoItem[] = [
-    {
-      id: 1,
-      text: "Big Things",
-      isCompleted: false,
-    },
-    {
-      id: 2,
-      text: "Another world",
-      isCompleted: true,
-    },
-  ];
-
+function TodoList({ data }: TodoListProps) {
   const updateTodo = (id: number) => {
     const item = data.find((x) => x.id === id);
     console.log(item);
